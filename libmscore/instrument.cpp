@@ -1018,7 +1018,7 @@ ClefTypeList Instrument::clefType(int staffIdx) const
       {
       if (staffIdx >= _clefType.size()) {
             if (_clefType.empty())
-                  return ClefTypeList(staffIdx == 1 ? ClefType::F : ClefType::G);
+                  return ClefTypeList(staffIdx == 1 && _instrumentId.contains("keyboard") ? ClefType::F : ClefType::G);
             return _clefType[0];
             }
       return _clefType[staffIdx];
